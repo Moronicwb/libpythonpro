@@ -24,10 +24,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
+    - name: Set up Python 3.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.10
     - name: Copying configurations
       run: |
         cp contrib/env-sample .env
@@ -43,6 +43,6 @@ jobs:
         pipenv run pytest pythonpro --cov=pythonpro
     - name: Posting Coverage
       env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: 'e3acc60e-d4bf-4247-ab6d-8ba23a5713cf'
       run: |
         pipenv run codecov
